@@ -18,6 +18,8 @@ defmodule ModulePlayground do
   end
 
   def print_sum do
+    # ModulePlayground.Misc.Util.Math.add(1,2)
+    # Math.add(1,2)
     MyMath.add(1,2)
   end
 end
