@@ -7,6 +7,8 @@ defmodule ModulePlayground do
 
   alias ModulePlayground.Misc.Util.Math, as: MyMath # MyMath will be the alias
 
+  require  Integer # To use macros
+
   def say_here do
     inspect "I'm here"
   end
@@ -22,7 +24,24 @@ defmodule ModulePlayground do
     # Math.add(1,2)
     MyMath.add(1,2)
   end
+
+  def print_is_even(num) do
+    puts "is #{num} even? #{Integer.is_even(num)}"
+  end
 end
 
 # iex "module_playground.exs": to load a module
 # r(ModulePlayground): to reload module in terminal (iex)
+
+# Import
+# - include module functions
+# - Include/exclude specific functions
+
+# Alias
+# - Reduce typing
+# - Rename a module
+
+# Require
+# - Allow using macros
+
+# All of them can be use at Module or at Function level
