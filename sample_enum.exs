@@ -15,10 +15,27 @@ defmodule Sample.Enum do
 
   # def first([head| _]), do: head
 
-  def first(list) when length(list) == 0, do: nil
+  # Guard clause
+  # def first(list) when length(list) == 0, do: nil
 
-  def first([head| _]), do: head
+  # def first([head| _]), do: head
 
+  #=================
+  # Default params
+  #=================
+  def add(list, val \\ 0) do
+    [val | list]
+  end
+  # Sample.Enum.add([:one, :two])
+  # Sample.Enum.add(zero, [:one, :two])
+
+  def first(list, val \\ nil)
+  def first([head| _], _), do: head
+  def first([], val), do: val
+  # Sample.Enum.first([1,2,3]) # 1
+  # Sample.Enum.first([1,2,3], 0) # 1
+  # Sample.Enum.first([],5) # 5
+  # Sample.Enum.first([]) # nil
 end
 
 # first/1
