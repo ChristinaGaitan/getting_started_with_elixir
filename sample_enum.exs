@@ -11,9 +11,19 @@ defmodule Sample.Enum do
   #   head
   # end
 
-  def first([]), do: nil
+  # def first([]), do: nil
+
+  # def first([head| _]), do: head
+
+  def first(list) when length(list) == 0, do: nil
 
   def first([head| _]), do: head
+
+end
+
+# first/1
+# {function name} / {number of parameters}
+
 
   # def some_function(quantity, {_,_,price}) do
   #   quantity * price
@@ -22,7 +32,3 @@ defmodule Sample.Enum do
   # def some_function(quantity, book) do
   #   quantity * elem(book, 2)
   # end
-end
-
-# first/1
-# {function name} / {number of parameters}
