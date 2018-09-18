@@ -46,6 +46,30 @@ defmodule Sample.Enum do
   end
   # Sample.Enum.add([], :helo)
   # Sample.Enum.trace(:helo) # Erros
+
+  #=================
+  # Functions as first class citizens
+  #=================
+  # list = [1, 2, 3, 4]
+  # # Sample.Utils = example module
+  # # We use & and arity for the needed function
+  # Enum.map(list, &Sample.Utils.square/1) # [1, 4, 9, 16]
+  # Enum.reduce(list, 0, &Sample.Utils.sum/1) # 10
+
+  #=================
+  # Annonymous Functions
+  #=================
+  # list = [1, 2, 3, 4]
+  # # Lambda style
+  # Enum.map(list, fn(x) -> x * x end) # [1, 4, 9, 16]
+  # Enum.reduce(list, 0, fn(x, acc) -> acc + x end) # 10
+
+  # # We can use the capture operator &
+  # # Annonymous style
+  # list = [1, 2, 3, 4]
+  # Enum.map(list, &(&1 * &1)) # [1, 4, 9, 16]
+  # Enum.reduce(list, 0, &(&1 + &2)) # 10
+
 end
 
 # first/1
