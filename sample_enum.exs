@@ -24,6 +24,7 @@ defmodule Sample.Enum do
   # Default params
   #=================
   def add(list, val \\ 0) do
+    trace(val)
     [val | list]
   end
   # Sample.Enum.add([:one, :two])
@@ -36,11 +37,19 @@ defmodule Sample.Enum do
   # Sample.Enum.first([1,2,3], 0) # 1
   # Sample.Enum.first([],5) # 5
   # Sample.Enum.first([]) # nil
+
+  #=================
+  # Private functions
+  #=================
+  defp trace(value) do
+    IO.puts("The valuepassed was: #{value}")
+  end
+  # Sample.Enum.add([], :helo)
+  # Sample.Enum.trace(:helo) # Erros
 end
 
 # first/1
 # {function name} / {number of parameters}
-
 
   # def some_function(quantity, {_,_,price}) do
   #   quantity * price
