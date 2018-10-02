@@ -1,1 +1,1 @@
-# getting_started_with_elixir
+# Getting started with Elixir
