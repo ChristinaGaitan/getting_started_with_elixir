@@ -83,7 +83,60 @@ defmodule Sample.Enum.Control.Flow do
   def day_abbreviation3(:Sunday), do: "Su"
   # We don't care about the value
   def day_abbreviation3(_), do: "Invalid day"
+
+
+  #===================================
+  # Case
+  #===================================
+  def day_abbrevation4(day) do
+    case day do
+      :Monday -> "M"
+      :Tuesday -> "Tu"
+      :Wednesday -> "W"
+      :Thursday -> "Th"
+      :Friday -> "F"
+      :Saturday -> "Sa"
+      :Sunday -> "Su"
+      _ -> "Invalid day"
+    end
+  end
+
+  # We can use pattern matching with case statement
+  # def describe_date(date) do
+  #   case date do
+  #     {1, _, _} -> "Brand new month"
+  #     {25, 12, _} -> "Merry Christmas"
+  #     {25, month, _} -> "Only #{12 - month} months until Christmas"
+  #     {31, 10, 1517} -> "The reformation is started"
+  #     {31, 10, _} -> "Happy Halloween"
+  #     {_, _, _} -> "Just an avarage day"
+  #   end
+  # end
+
+  # We can also use guard clauses
+  def describe_date(date) do
+    case date do
+      {1, _, _} -> "Brand new month"
+      {25, 12, _} -> "Merry Christmas"
+      {25, month, _} -> "Only #{12 - month} months until Christmas"
+      {31, 10, 1517} -> "The reformation is started"
+      {31, 10, _} -> "Happy Halloween"
+      {_, month, _} when month <= 12 -> "Just an average day"
+      {_, _, _} -> "Invalid month"
+    end
+  end
+
+  # It's very useful when working with files
+  def send_tweet(path) do
+    case File.read(path) do
+      {:ok, data} -> Tweet.send(data)
+      {:error, error} -> IO.puts "Could not open file #{error}"
+    end
+  end
 end
+
+
+
 # iex 'sample_enum_control_flow.exs'
 # r(Sample.Enum.Control.Flow)
 
