@@ -70,6 +70,17 @@ defmodule Sample.Enum do
   # Enum.map(list, &(&1 * &1)) # [1, 4, 9, 16]
   # Enum.reduce(list, 0, &(&1 + &2)) # 10
 
+  #=================
+  # Recursion
+  #=================
+  def map([], _), do: []
+
+  def map([hd | tl], f) do
+    [f.(hd) | map(tl, f)]
+  end
+
+  # Sample.Enum.map([1,2,3], &(&1 * 2))
+  # [2, 4, 6]
 end
 
 # first/1
