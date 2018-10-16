@@ -81,6 +81,25 @@ defmodule Sample.Enum do
 
   # Sample.Enum.map([1,2,3], &(&1 * 2))
   # [2, 4, 6]
+
+  #=================
+  # Tail recursion
+  #=================
+
+  # Body recursion: the last operation is the addition operation
+  # def length([]), do: 0
+  # def length(_ | tail),
+  #   do: 1 + length(tail)
+
+  # Tail recursion: only happens when the last operation a function performs i recursion
+  # won't overflow the stack
+  # NOT WORKING :(
+  def other_length([_ | tail]),
+    do: other_length(tail | 1)
+  def other_length([]| len),
+    do: len
+  def other_length([_ | tail], len),
+    do: other_length(tail | len + 1)
 end
 
 # first/1
