@@ -1,0 +1,10 @@
+Line 1
+Line 2
+This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string. This is a very long string.
+A third line
+# iex -S mix # to compile app
+# cd("lib/pluralsight_tweet")
+# ls
+# PluralsightTweet.FileReader.get_string_to_tweet('sample.txt')
+# r(PluralsightTweet.FileReader)
+# PluralsightTweet.FileReader.get_string_to_tweet('sample.txt')
