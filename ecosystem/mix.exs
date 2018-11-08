@@ -27,3 +27,20 @@
 #================================
 # Has other Elixir projects undereath it
 # one app could depend on otherones, but they can be deployed separately
+
+#================================
+# Hex (hex.pm)
+#================================
+# Package manager for elixir (hex == gems)
+
+# 1. Add the hex
+# defp deps do
+#   [
+#     {:credo, "~> 0.4.11"}
+#     # {:dep_from_hexpm, "~> 0.3.0"},
+#     # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
+#   ]
+# end
+
+# 2. Run mix deps.get
+# Gets our dependencies and their dependencies
